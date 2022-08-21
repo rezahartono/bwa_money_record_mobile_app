@@ -14,11 +14,14 @@ class MoneyRecordApp extends StatelessWidget {
   Widget build(BuildContext context) {
     if (common.isIos()) {
       return GetCupertinoApp(
-        theme: theme.iosLight(),
+        theme: Get.isDarkMode ? theme.iosDark() : theme.iosLight(),
+        debugShowCheckedModeBanner: false,
       );
     } else {
       return GetMaterialApp(
         theme: theme.light(),
+        darkTheme: theme.dark(),
+        debugShowCheckedModeBanner: false,
       );
     }
   }

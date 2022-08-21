@@ -4,8 +4,11 @@ part of 'theme.dart';
 
 class AppColor {
   final Color white = const Color(0xFFFFFFFF);
-  final Color black = const Color(0xFF0A222D);
-  final Color blue = const Color(0xFF4D77BC);
+  final Color black = const Color(0xFF000000);
+  final Color purple = const Color(0xFF767AE7);
+  final Color lightBlue = const Color(0xFF9AB3F5);
+  final Color lightGreen = const Color(0xFFB9FFFC);
+  final Color lightPurple = const Color(0xFFA3D8F4);
   final Color green = const Color(0xFF42AD43);
   final Color yellow = const Color(0xFFFFC300);
   final Color red = const Color(0xFFCE2F21);

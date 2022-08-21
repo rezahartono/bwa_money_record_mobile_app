@@ -21,9 +21,16 @@ class AppTheme {
   }
 
   ThemeData light() {
-    return ThemeData(
-      brightness: Brightness.light,
-      primaryColor: Colors.blue,
+    return ThemeData.light().copyWith(
+      primaryColor: color.purple,
+      colorScheme: ColorScheme.light(
+        primary: color.purple,
+        secondary: color.lightGreen,
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: color.purple,
+        foregroundColor: color.black,
+      ),
     );
   }
 

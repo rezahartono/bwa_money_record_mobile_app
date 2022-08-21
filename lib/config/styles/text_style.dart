@@ -15,8 +15,8 @@ class AppTextStyle {
     fontWeight: fontWeight.regular,
     fontStyle: fontStyle.normal,
   );
-  TextStyle blueText = GoogleFonts.poppins(
-    color: color.blue,
+  TextStyle purpleText = GoogleFonts.poppins(
+    color: color.purple,
     fontSize: fontSize.body,
     fontWeight: fontWeight.regular,
     fontStyle: fontStyle.normal,
