@@ -2,6 +2,8 @@
 
 part 'messages.dart';
 
-class AppStringConstant {}
+class AppStringConstant {
+  final String authentication = "authentication";
+}
 
 AppStringConstant constant = new AppStringConstant();

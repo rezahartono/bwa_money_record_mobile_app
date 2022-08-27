@@ -5,7 +5,6 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:money_record/config/styles/layout_config.dart';
-import 'package:logger/logger.dart';
 
 class AppCommon {
   String randomString(int length) {
@@ -42,4 +41,3 @@ class AppCommon {
 }
 
 AppCommon common = new AppCommon();
-Logger logger = new Logger();
