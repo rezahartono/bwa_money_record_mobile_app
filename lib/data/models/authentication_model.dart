@@ -1,21 +1,21 @@
 class AuthenticationModel {
-  String? tokenType;
-  String? token;
+  String? username;
+  String? password;
 
   AuthenticationModel({
-    this.tokenType,
-    this.token,
+    this.username,
+    this.password,
   });
 
   AuthenticationModel.fromJson(Map<String, dynamic> json) {
-    tokenType = json['token_type'];
-    token = json['token'];
+    username = json['username'];
+    password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'token_type': tokenType,
-      'token': token,
+      'username': username,
+      'password': password,
     };
   }
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:money_record/config/common/app_common.dart';
+import 'package:money_record/config/common/session_util.dart';
 import 'package:money_record/config/styles/theme.dart';
+import 'package:money_record/presentation/pages/android/a_home_page.dart';
+import 'package:money_record/presentation/pages/android/a_sign_in_page.dart';
 
 void main() {
   runApp(const MoneyRecordApp());
@@ -22,6 +25,16 @@ class MoneyRecordApp extends StatelessWidget {
         theme: theme.light(),
         darkTheme: theme.dark(),
         debugShowCheckedModeBanner: false,
+        home: FutureBuilder(
+          future: session.isActive(),
+          builder: ((context, AsyncSnapshot<bool> snapshot) {
+            if (snapshot.hasData && snapshot.data!) {
+              return ASignInPage();
+            } else {
+              return AHomePage();
+            }
+          }),
+        ),
       );
     }
   }

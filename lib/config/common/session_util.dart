@@ -19,8 +19,12 @@ class SessionUtil {
     return store.remove(constant.authentication);
   }
 
-  bool isActive() {
-    return (store.read(constant.authentication) != null);
+  Future<bool> isActive() async {
+    if (store.read(constant.authentication) != null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   AuthenticationModel get() {
