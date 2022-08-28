@@ -103,7 +103,7 @@ class RequestHandler {
   }) async {
     final Uri url = environment.baseUrl(path: path);
 
-    var request = http.MultipartRequest('POST', url);
+    var request = http.MultipartRequest("POST", url);
 
     request.fields.addAll(body);
 
@@ -112,7 +112,7 @@ class RequestHandler {
     for (var attachment in attachments) {
       request.files.add(
         http.MultipartFile(
-          'files',
+          "files",
           attachment.file!.readAsBytes().asStream(),
           attachment.file!.lengthSync(),
           filename: attachment.fileName,
@@ -137,7 +137,7 @@ class RequestHandler {
     final Uri url = Uri.parse(uri);
 
     var httpClient = http.Client();
-    var request = new http.Request('GET', url);
+    var request = new http.Request("GET", url);
     var response = httpClient.send(request);
     String dir = (await getApplicationDocumentsDirectory()).path;
 
@@ -148,7 +148,7 @@ class RequestHandler {
       r.stream.listen((List<int> chunk) {
         // Display percentage of completion
         debugPrint(
-          'downloadPercentage: ${downloaded / r.contentLength! * 100}',
+          "downloadPercentage: ${downloaded / r.contentLength! * 100}",
         );
 
         chunks.add(chunk);
@@ -156,11 +156,11 @@ class RequestHandler {
       }, onDone: () async {
         // Display percentage of completion
         debugPrint(
-          'downloadPercentage: ${downloaded / r.contentLength! * 100}',
+          "downloadPercentage: ${downloaded / r.contentLength! * 100}",
         );
 
         // Save the file
-        File file = new File('$dir/$fileName');
+        File file = new File("$dir/$fileName");
         final Uint8List bytes = Uint8List(r.contentLength!);
         int offset = 0;
         for (List<int> chunk in chunks) {

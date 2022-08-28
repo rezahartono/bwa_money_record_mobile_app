@@ -9,7 +9,7 @@ import 'package:money_record/config/styles/layout_config.dart';
 class AppCommon {
   String randomString(int length) {
     const chars =
-        'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+        "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
 
     Random random = Random();
 

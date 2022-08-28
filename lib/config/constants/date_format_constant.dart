@@ -3,7 +3,7 @@
 import 'package:intl/intl.dart';
 
 class DateFormatConstant {
-  final DateFormat onlyDate = DateFormat('dd-MMM-YYYY', 'id_ID');
+  final DateFormat onlyDate = DateFormat("dd-MMM-YYYY");
 }
 
 DateFormatConstant dateFormat = new DateFormatConstant();

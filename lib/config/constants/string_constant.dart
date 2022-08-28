@@ -4,6 +4,9 @@ part 'messages.dart';
 
 class AppStringConstant {
   final String authentication = "authentication";
+  final String locale = "id_ID";
+  final String pathImages = "assets/images/";
+  final String pathIcons = "assets/icons/";
 }
 
 AppStringConstant constant = new AppStringConstant();

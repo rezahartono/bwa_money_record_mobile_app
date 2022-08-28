@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:money_record/config/common/app_common.dart';
 import 'package:money_record/config/common/session_util.dart';
+import 'package:money_record/config/constants/string_constant.dart';
+import 'package:money_record/config/styles/layout_config.dart';
 import 'package:money_record/config/styles/theme.dart';
 import 'package:money_record/presentation/pages/android/a_home_page.dart';
 import 'package:money_record/presentation/pages/android/a_sign_in_page.dart';
 
 void main() {
-  runApp(const MoneyRecordApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  initializeDateFormatting(constant.locale).then(
+    (value) => runApp(
+      const MoneyRecordApp(),
+    ),
+  );
 }
 
 class MoneyRecordApp extends StatelessWidget {
@@ -28,10 +36,11 @@ class MoneyRecordApp extends StatelessWidget {
         home: FutureBuilder(
           future: session.isActive(),
           builder: ((context, AsyncSnapshot<bool> snapshot) {
+            layoutConfig.init(context);
             if (snapshot.hasData && snapshot.data!) {
-              return ASignInPage();
+              return const AHomePage();
             } else {
-              return AHomePage();
+              return const ASignInPage();
             }
           }),
         ),
